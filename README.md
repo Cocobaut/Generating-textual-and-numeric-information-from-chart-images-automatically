@@ -25,31 +25,17 @@ Dự án này tập trung vào việc chuyển đổi dữ liệu phi cấu trú
 
 Quy trình xử lý được chia thành 5 giai đoạn chính:
 
-1. 
-**Text Detection & Recognition:** Sử dụng kiến trúc lai giữa **YOLO** (để phát hiện vùng chữ) và **PaddleOCR (PP-OCRv4)** để nhận dạng ký tự với độ chính xác cao.
+1. **Text Detection & Recognition:** Sử dụng kiến trúc lai giữa **YOLO** (để phát hiện vùng chữ) và **PaddleOCR (PP-OCRv4)** để nhận dạng ký tự với độ chính xác cao.
 
+2. **Text Role Classification:** Sử dụng mô hình đa phương thức **LayoutLMv3** để phân loại văn bản vào 9 vai trò khác nhau (Chart Title, Axis Title, Tick Label, v.v.) dựa trên nội dung, vị trí và hình ảnh.
 
-2. 
-**Text Role Classification:** Sử dụng mô hình đa phương thức **LayoutLMv3** để phân loại văn bản vào 9 vai trò khác nhau (Chart Title, Axis Title, Tick Label, v.v.) dựa trên nội dung, vị trí và hình ảnh.
+3. **Axis Analysis:** Xác định hệ trục tọa độ và liên kết các nhãn trục (Tick Labels) với trục tương ứng để xây dựng thang đo pixel-to-value.
 
+4. **Legend Analysis:** Sử dụng thuật toán **Hungarian** để ghép cặp chính xác giữa nhãn chú thích và ký hiệu màu sắc tương ứng.
 
-3. 
-**Axis Analysis:** Xác định hệ trục tọa độ và liên kết các nhãn trục (Tick Labels) với trục tương ứng để xây dựng thang đo pixel-to-value.
-
-
-4. 
-**Legend Analysis:** Sử dụng thuật toán **Hungarian** để ghép cặp chính xác giữa nhãn chú thích và ký hiệu màu sắc tương ứng.
-
-
-5. **Data Extraction:**
+5. **Data Extraction:** 
 * Phát hiện các cột (Bar) bằng **YOLOv8s**.
-
-
 * Sử dụng **ResNet50** để trích xuất đặc trưng hình ảnh và liên kết cột với chuỗi dữ liệu (Series).
-
-
-
-
 
 ---
 
@@ -57,23 +43,18 @@ Quy trình xử lý được chia thành 5 giai đoạn chính:
 
 * 
 **Mô hình phát hiện:** YOLOv8 (phiên bản s và obb).
-
-
+  
 * 
 **Nhận dạng văn bản:** PaddleOCR.
-
 
 * 
 **Hiểu tài liệu đa phương thức:** LayoutLMv3.
 
-
 * 
 **Trích xuất đặc trưng:** ResNet50.
 
-
 * 
 **Giao diện người dùng:** Web Interface (Hỗ trợ tải lên ảnh và xuất CSV).
-
 
 
 ---
@@ -84,22 +65,12 @@ Dự án được huấn luyện và đánh giá trên bộ dữ liệu **ICPR 2
 
 | Tác vụ | Chỉ số đánh giá | Kết quả |
 | --- | --- | --- |
-| **Text Detection** | F1-Score | <br>**81.95%** 
-
- |
-| **Text Recognition** | Character Accuracy | <br>**92.11%** 
-
- |
-| **Role Classification** | Precision | <br>**98.90%** 
-
- |
-| **Plot Element Detection** | mAP@0.5 | <br>**97.40%** 
-
- |
+| **Text Detection** | F1-Score | <br>**81.95%** |
+| **Text Recognition** | Character Accuracy | <br>**92.11%** |
+| **Role Classification** | Precision | <br>**98.90%** |
+| **Plot Element Detection** | mAP@0.5 | <br>**97.40%** |
 
 Công thức tính giá trị thực  của mỗi cột dựa trên thang đo được tính như sau:
-
-
 
 Trong đó:
 
