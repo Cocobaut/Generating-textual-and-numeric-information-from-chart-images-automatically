@@ -6,15 +6,10 @@ Dự án này tập trung vào việc chuyển đổi dữ liệu phi cấu trú
 
 ## 📋 Mục tiêu chính
 
-* 
 **Trích xuất thành phần cơ sở:** Tự động phát hiện vùng văn bản và các thành phần đồ họa như cột, đường.
 
-
-* 
 **Phân loại vai trò ngữ nghĩa:** Xác định vai trò của văn bản (tiêu đề, nhãn trục, chú thích) bằng các mô hình Transformer tiên tiến.
 
-
-* 
 **Tái tạo dữ liệu:** Sử dụng thuật toán hình học để khôi phục lại bảng số liệu gốc từ hình ảnh với độ chính xác cao.
 
 
@@ -41,19 +36,14 @@ Quy trình xử lý được chia thành 5 giai đoạn chính:
 
 ## 🚀 Công nghệ sử dụng
 
-* 
 **Mô hình phát hiện:** YOLOv8 (phiên bản s và obb).
   
-* 
 **Nhận dạng văn bản:** PaddleOCR.
 
-* 
 **Hiểu tài liệu đa phương thức:** LayoutLMv3.
 
-* 
 **Trích xuất đặc trưng:** ResNet50.
 
-* 
 **Giao diện người dùng:** Web Interface (Hỗ trợ tải lên ảnh và xuất CSV).
 
 
@@ -70,37 +60,16 @@ Dự án được huấn luyện và đánh giá trên bộ dữ liệu **ICPR 2
 | **Role Classification** | Precision | <br>**98.90%** |
 | **Plot Element Detection** | mAP@0.5 | <br>**97.40%** |
 
-Công thức tính giá trị thực  của mỗi cột dựa trên thang đo được tính như sau:
-
-Trong đó:
-
-* 
-: Giá trị tại đường cơ sở (trục hoành).
-
-
-* 
-: Chiều cao pixel của cột.
-
-
-* 
-: Tỉ lệ pixel-to-value được ước lượng.
-
-
-
 ---
 
 ## 👥 Thành viên thực hiện
 
-* 
 **Giảng viên hướng dẫn:** Mai Xuân Toàn, Trần Tuấn Anh, Huỳnh Văn Thống, Trần Hồng Tài.
 
-
-* **Sinh viên thực hiện (Nhóm 9):**
+**Sinh viên thực hiện:**
 * Lê Trần Tấn Phát (MSSV: 2312580).
 
-
 * Bùi Ngọc Phúc (MSSV: 2312665).
-
 
 * Nguyễn Hồ Quang Khải (MSSV: 2352538).
 
